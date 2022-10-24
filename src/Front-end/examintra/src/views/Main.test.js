@@ -18,4 +18,28 @@ describe("operations tests", () => {
 
         expect(textBox).toBeInTheDocument() ;
     })
+
+    it("test input numbers", () => {
+        render(<Main/>)
+
+        const inputs = screen.getAllByRole("spinbutton")
+
+        expect(inputs).toHaveLength(4)
+    })
+
+    it("test input numbers", () => {
+        render(<Main/>)
+
+        const inputs = screen.getAllByRole("spinbutton") //le role pour les inputs avec type=number
+
+        expect(inputs).toHaveLength(4)
+    })
+
+    it("test input submit", () => {
+        render(<Main/>)
+
+        const inputs = screen.getAllByRole("button") //le role pour les inputs avec type=submit
+
+        expect(inputs).toHaveLength(2)
+    })
 }) ;

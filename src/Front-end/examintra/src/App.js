@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Main from './views/Main';
+import { Header } from './views/Header';
 
 function App() {
   return (
-    <Main/>
+    <div>
+      <Header/>
+      <Main/>
+    </div>
+    
   );
 }
 

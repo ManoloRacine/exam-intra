@@ -34,6 +34,20 @@ public class OperationsServiceTest {
     }
 
     @Test
+    void additionZeroZero() {
+        //Arrange
+        OperationNumbers operationNumbers = mock(OperationNumbers.class) ;
+        when(operationNumbers.getFirstNumber()).thenReturn(0) ;
+        when(operationNumbers.getSecondNumber()).thenReturn(0) ;
+
+        //Act
+        int result = operationsService.addition(operationNumbers) ;
+
+        //Assert
+        assertEquals(0, result);
+    }
+
+    @Test
     void substractionHappyDay() {
         //Arrange
         OperationNumbers operationNumbers = mock(OperationNumbers.class) ;
@@ -46,5 +60,19 @@ public class OperationsServiceTest {
 
         //Assert
         assertEquals(2, result);
+    }
+
+    @Test
+    void substractionZeroZero() {
+        //Arrange
+        OperationNumbers operationNumbers = mock(OperationNumbers.class) ;
+        when(operationNumbers.getFirstNumber()).thenReturn(0) ;
+        when(operationNumbers.getSecondNumber()).thenReturn(0) ;
+
+        //Act
+        int result = operationsService.substraction(operationNumbers) ;
+
+        //Assert
+        assertEquals(0, result);
     }
 }

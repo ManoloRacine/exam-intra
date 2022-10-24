@@ -48,6 +48,13 @@ public class OperationsControllerTest {
     }
 
     @Test
+    void additionNoBody() throws Exception {
+        //Act & Assert
+        mockMvc.perform(post("/operations/addition").content("").
+                contentType(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest()) ;
+    }
+
+    @Test
     void substractionHappyDay() throws Exception {
         //Arrange
         OperationNumbers operationNumbers = new OperationNumbers(5, 2) ;
@@ -60,6 +67,13 @@ public class OperationsControllerTest {
         String actual = mvcResult.getResponse().getContentAsString() ;
 
         assertThat(actual).isNotBlank().isEqualTo("3") ;
+    }
+
+    @Test
+    void substractionNoBody() throws Exception {
+        //Act & Assert
+        mockMvc.perform(post("/operations/substraction").content("").
+                contentType(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest()) ;
     }
 
 
